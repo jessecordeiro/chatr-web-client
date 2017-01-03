@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chatr - Web Client</title>
+    <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes=192x192>
+    <link rel="icon" type="image/png" href="/images/favicon-194x194.png" sizes=194x194>
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes=32x32>
+
+    <link rel="stylesheet" href="css/main.css">
+    <!--Import Google Icon/Roboto Font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  </head>
+
+  <body>
+    <!-- Side-navbar -->
+    <nav>
+    <ul id="slide-out" class="side-nav">
+       <li><div class="userView">
+         <div class="background">
+           <img src="images/office.jpg">
+         </div>
+         <a href="#!user"><img class="circle" id="profile-avatar" onClick="$('#image-select').modal('open')" src=""></a>
+         <a href="#!name"><span class="white-text name" id="nickname-navbar"></span></a>
+         <a href="#!email"><span class="white-text email"></span></a>
+       </div></li>
+       <li><a onClick="window.location.reload()"><i class="material-icons">exit_to_app</i>Log out</a></li>
+       <li><a onClick="$('#image-select').modal('open')"><i class="material-icons">person</i>Change Avatar</a></li>
+       <li><div class="divider"></div></li>
+       <li id="users-online"><a class="subheader" id="users-online-status">Users Online: 0</a></li>
+     </ul>
+     <a href="#" data-activates="slide-out" class="button-collapse" onclick="socket.emit('refresh navbar');"><i class="material-icons">menu</i></a>
+   </nav>
+    <!-- Landing Modal -->
+    <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+        <div class="row center-align">
+          <div class="input-field col s4">
+            <input id="nickname" type="text" maxlength="30">
+            <label for="nickname">Nickname</label>
+          </div>
+          <button class="waves-effect waves-light btn gap" id="join" onclick="attemptToJoin()">Join</button>
+        </div>
+      </div>
+    </div>
+    <!-- Images Modal -->
+     <div id="image-select" class="modal avatar-content">
+       <div class="modal-content">
+         <h4>Select Avatar</h4>
+         <div class="row">
+            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-1" src="images/avatar-1.jpg"></a></div>
+            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-2" src="images/avatar-2.jpg"></a></div>
+            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-3" src="images/avatar-3.jpg"></a></div>
+            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-4" src="images/avatar-4.jpg"></a></div>
+         </div>
+         <div class="row">
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-5" src="images/avatar-5.jpg"></a></div>
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-6" src="images/avatar-6.jpg"></a></div>
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-7" src="images/avatar-7.jpg"></a></div>
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-8" src="images/avatar-8.jpg"></a></div>
+         </div>
+         <div class="row">
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-9" src="images/avatar-9.jpg"></a></div>
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-10" src="images/avatar-10.jpg"></a></div>
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-11" src="images/avatar-11.jpg"></a></div>
+           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-12" src="images/avatar-12.jpg"></a></div>
+         </div>
+       </div>
+       <div class="modal-footer">
+         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="$('#image-select').modal('close');">Cancel</a>
+       </div>
+     </div>
+
+    <ul id="messages"></ul>
+    <form action="" id="input">
+      <input id="m" autocomplete="off" /><a class="btn-floating btn-large waves-effect waves-light red sendButton" onclick="$('#input').submit();"><i class="material-icons">send</i></a>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
