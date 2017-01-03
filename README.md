@@ -38,7 +38,7 @@ Follow the steps below to start an instance of Chatr within minutes
 
   ```bash
   git clone https://github.com/jessecordeiro/chatr-web-client.git
-  cd chatr-web-client
+  cd chatr-web-client/src
   ```
 
 3. **Install dependencies:**
