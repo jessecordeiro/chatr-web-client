@@ -44,7 +44,7 @@ Follow the steps below to start an instance of Chatr within minutes
 3. **Install dependencies:**
 
   ```bash
-  $ npm install
+  npm install
   ```
   
 3. **Start the Node.js HTTP server:**
