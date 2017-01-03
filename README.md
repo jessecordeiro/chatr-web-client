@@ -9,6 +9,7 @@ Chatr is an MIT open-source project.
 ## Contents
 
 * [Features](#features)
+* [Demo](https://github.com/jessecordeiro/chatr-web-client/tree/master/demo)
 * [Quick Start](#quick-start)
 * [Planned Features](#planned-features)
 * [Contribute](#contribute)
