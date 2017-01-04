@@ -1,12 +1,12 @@
 var nickname;
 var socket = io();
-socket.on('login response', function(res){
+socket.on('login response', function(res, err){
   if (res){
     $('#modal1').modal('close');
     $('#nickname-navbar').text(nickname);
     openSocket(nickname);
   }else{
-    Materialize.toast('That nickname is already taken', 3000, 'rounded');
+    Materialize.toast(err.error, 3000, 'rounded');
   }
 });
 

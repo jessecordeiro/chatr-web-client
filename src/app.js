@@ -23,9 +23,13 @@ io.on('connection', function(socket){
       }
     }
     if (isUnique){
-      socket.emit('login response', true);
+      if (nickname.match(/^[a-zA-Z0-9_][a-zA-Z0-9_]*[a-zA-Z0-9_]$/)){
+        socket.emit('login response', true);
+      }else{
+        socket.emit('login response', false, {"error": "Nickname contains invalid characters"});
+      }
     }else{
-      socket.emit('login response', false);
+      socket.emit('login response', false, {"error": "Nickname already taken"});
       console.log(connections.length);
     }
   });
