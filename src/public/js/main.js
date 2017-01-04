@@ -29,7 +29,8 @@ function openSocket(nickname){
   });
   socket.on('chat message', function(connectionObject){
     var avatar = $('<img class="circle avatar-chat tooltipped" src="'+ connectionObject.avatar +'" data-position="right" data-delay="50" data-tooltip="' + (new Date()).toLocaleTimeString() + '">').tooltip();
-    var messageContent = $('<span><b>' + connectionObject.nickname + '</b>: ' + connectionObject.msg + '</span>');
+    var userInfo = $('<b></b>').text(connectionObject.nickname);
+    var messageContent = $('<span></span>').text(': ' + connectionObject.msg).prepend(userInfo);
     var message = $('<li class="valign-wrapper"></li>').append(avatar).append(messageContent);
     $('#messages').append(message);
   });
