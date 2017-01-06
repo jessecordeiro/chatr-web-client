@@ -48,14 +48,16 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('a user disconnected');
     var connection = connectionManager.getConnection(socket);
-    connectionManager.removeConnection(socket);
-    var disconnectMsg = connection.nickname + " has disconnected";
-    var connections = connectionManager.getConnections();
-    var appInfo = {
-      "connections": connections,
-      "msg": disconnectMsg
-    };
-    io.emit('disconnected', appInfo);
+    if (connection){
+      connectionManager.removeConnection(socket);
+      var disconnectMsg = connection.nickname + " has disconnected";
+      var connections = connectionManager.getConnections();
+      var appInfo = {
+        "connections": connections,
+        "msg": disconnectMsg
+      };
+      io.emit('disconnected', appInfo);
+    }
   });
 
   socket.on('chat message', function(message) {
