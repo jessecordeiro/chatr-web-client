@@ -31,6 +31,8 @@ Chatr currently features:
 
 - Identicons - [**Recently added**](https://github.com/jessecordeiro/chatr-web-client/commit/1a803f520aa2d8395c0939e7665500ea0702e488)
 
+- User profiles + last active timestamps - [**Recently added**](https://github.com/jessecordeiro/chatr-web-client/commit/d359b824356c4cf048420ddc1adc5ee4bc66533b)
+
 ## <a name="quick-start"></a>Quick Start
 
 Follow the steps below to start an instance of Chatr within minutes
@@ -66,9 +68,6 @@ Follow the steps below to start an instance of Chatr within minutes
 
 - GIF/emoji support :rocket:
 
-- Last active timestamps
-
-- User profiles
 
 ## <a name="contribute"></a>Contribute
 1. Fork the repository
