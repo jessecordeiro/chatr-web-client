@@ -1,3 +1,4 @@
+var Identicon = require('identicon.js');
 var app = require('express')();
 var express = require('express');
 var http = require('http').Server(app);
@@ -64,11 +65,12 @@ io.on('connection', function(socket){
     io.emit('chat message', connection);
   });
 
-  socket.on('update avatar', function(src, newUser) {
-    connectionManager.setAvatar(socket, src);
+  socket.on('update avatar', function(newUser) {
+    var avatarSrc = "data:image/png;base64," + (new Identicon("", {size:150}).toString());
+    connectionManager.setAvatar(socket, avatarSrc);
     var connection = connectionManager.getConnection(socket);
     var connections = connectionManager.getConnections();
-    socket.emit('update avatar', connection, connections, newUser);
+    socket.emit('update avatar', connection, connections);
     if (newUser){
       var connectMsg = connection.nickname + " has connected";
       var appInfo = {

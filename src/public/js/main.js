@@ -23,9 +23,7 @@ function openSocket(nickname){
   });
   socket.on('welcome', function(info){
     $('#messages').append($('<li><b>' + info.msg + '</b></li>'));
-    // Pick random avatar for user
-    $("#avatar-" + Math.floor((Math.random() * 12) + 1)).addClass('selected-avatar');
-    socket.emit('update avatar', $('.selected-avatar').attr('src'), true);
+    socket.emit('update avatar', true);
   });
   socket.on('chat message', function(connectionObject){
     var avatar = $('<img class="circle avatar-chat tooltipped" src="'+ connectionObject.avatar +'" data-position="right" data-delay="50" data-tooltip="' + (new Date()).toLocaleTimeString() + '">').tooltip();
@@ -41,6 +39,7 @@ function openSocket(nickname){
     notifyDOM(info);
   });
   socket.on('update avatar', function(connectionObject, connections){
+    Materialize.toast("Your avatar has been updated", 3000, 'rounded');
     $('#profile-avatar').attr('src', connectionObject.avatar);
     updateUserList(connections);
   });

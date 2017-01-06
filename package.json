@@ -4,6 +4,7 @@
   "description": "Chatr is an application intended to provide teams with a simple and lightweight platform for messaging.",
   "dependencies": {
     "express": "^4.10.2",
+    "identicon.js": "^2.0.0",
     "materialize-css": "^0.97.8",
     "socket.io": "^1.7.2"
   }

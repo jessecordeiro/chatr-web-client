@@ -22,12 +22,12 @@
          <div class="background">
            <img src="images/office.jpg">
          </div>
-         <a href="#!user"><img class="circle" id="profile-avatar" onClick="$('#image-select').modal('open')" src=""></a>
+         <a href="#!user"><img class="circle" id="profile-avatar" src=""></a>
          <a href="#!name"><span class="white-text name" id="nickname-navbar"></span></a>
          <a href="#!email"><span class="white-text email"></span></a>
        </div></li>
        <li><a onClick="window.location.reload()"><i class="material-icons">exit_to_app</i>Log out</a></li>
-       <li><a onClick="$('#image-select').modal('open')"><i class="material-icons">person</i>Change Avatar</a></li>
+       <li><a onClick="socket.emit('update avatar', false);"><i class="material-icons">person</i>Change Avatar</a></li>
        <li><div class="divider"></div></li>
        <li id="users-online"><a class="subheader" id="users-online-status">Users Online: 0</a></li>
      </ul>
@@ -45,33 +45,6 @@
         </div>
       </div>
     </div>
-    <!-- Images Modal -->
-     <div id="image-select" class="modal avatar-content">
-       <div class="modal-content">
-         <h4>Select Avatar</h4>
-         <div class="row">
-            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-1" src="images/avatar-1.jpg"></a></div>
-            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-2" src="images/avatar-2.jpg"></a></div>
-            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-3" src="images/avatar-3.jpg"></a></div>
-            <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-4" src="images/avatar-4.jpg"></a></div>
-         </div>
-         <div class="row">
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-5" src="images/avatar-5.jpg"></a></div>
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-6" src="images/avatar-6.jpg"></a></div>
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-7" src="images/avatar-7.jpg"></a></div>
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-8" src="images/avatar-8.jpg"></a></div>
-         </div>
-         <div class="row">
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-9" src="images/avatar-9.jpg"></a></div>
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-10" src="images/avatar-10.jpg"></a></div>
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-11" src="images/avatar-11.jpg"></a></div>
-           <div class="col s12 m6 l2 avatar"><a href="#!user" onclick="selectAvatar()"><img class="circle avatar-image" id="avatar-12" src="images/avatar-12.jpg"></a></div>
-         </div>
-       </div>
-       <div class="modal-footer">
-         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="$('#image-select').modal('close');">Cancel</a>
-       </div>
-     </div>
 
     <ul id="messages"></ul>
     <form action="" id="input">

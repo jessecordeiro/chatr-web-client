@@ -9,9 +9,6 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 .row .col.s4 { left: 30% !important; }
 .gap { margin-top: 1% !important; }
 .button-collapse { display: block !important; }
-.avatar { margin-left: 6% !important; }
-.selected-avatar { border: 3px solid #ee6e73; }
-.avatar-content { max-height: 100% !important; }
 .avatar-chat { height: 0.5%; width: 1%; margin-right: 0.5%;}
 .avatar-sidenav-list { margin-right: 10%; top: 5%; width: 10%; }
 .side-nav .valign-wrapper:hover { background-color: rgba(0,0,0,0.05) !important; }
