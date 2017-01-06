@@ -40,12 +40,18 @@ function openSocket(nickname){
   });
   socket.on('update avatar', function(connectionObject, connections){
     Materialize.toast("Your avatar has been updated", 3000, 'rounded');
-    $('#profile-avatar').attr('src', connectionObject.avatar);
+    $('#avatar').attr('src', connectionObject.avatar);
     updateUserList(connections);
   });
   socket.on('refresh navbar', function(connections){
     updateUserList(connections);
   });
+  socket.on('populate profile', function(connectionObject){
+    $('#profile-avatar').attr('src', connectionObject.avatar);
+    $('#profile-nickname').text(connectionObject.nickname);
+    $('#profile-activity').text(connectionObject.lastActive);
+    $('#modal2').modal('open');
+  })
 };
 function notifyDOM(info){
   $('#messages').append($('<li><b>' + info.msg + '</b></li>'));
@@ -57,7 +63,7 @@ function updateUserList(connections){
   $('#users-online').nextAll().remove();
   $('#users-online-status').text('Users online: ' + usersOnline);
   for (var i = 0; i < usersOnline; i++){
-    $('#slide-out').append($('<li class="valign-wrapper"><a class="waves-effect user" href="#!"><img class="circle avatar-sidenav-list" src="' + connections[i].avatar + '">' + connections[i].nickname + '</a></li>'));
+    $('#slide-out').append($('<li class="valign-wrapper" onClick="socket.emit(\'view profile\', this.id)" id="' + connections[i].nickname + '"><a class="waves-effect user" href="#!"><img class="circle avatar-sidenav-list" src="' + connections[i].avatar + '">' + connections[i].nickname + '</a></li>'));
   }
 };
 
@@ -81,3 +87,22 @@ function attemptToJoin() {
     socket.emit('attempt login', nickname);
   }
 };
+
+var typing = false;
+var timeout;
+function finishedTyping(){
+  typing = false;
+  socket.emit('typing');
+};
+$("#m").keypress(function(event){
+  // Only monitor activity when user is pressing any key other than enter key
+  if (event.keyCode != 13){
+    if (!typing){
+      typing = true;
+      socket.emit('typing');
+    }else{
+      clearTimeout(timeout);
+      timeout = setTimeout(finishedTyping, 3000);
+    }
+  }
+});

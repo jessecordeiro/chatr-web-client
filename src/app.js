@@ -85,6 +85,16 @@ io.on('connection', function(socket){
   socket.on('refresh navbar', function() {
     socket.emit('refresh navbar', connectionManager.getConnections());
   });
+
+  socket.on('typing', function(){
+    var connection = connectionManager.getConnection(socket);
+    connection['lastActive'] = (new Date()).toLocaleTimeString();
+    console.log(connection['lastActive']);
+  });
+
+  socket.on('view profile', function(nickname){
+    socket.emit('populate profile', connectionManager.getConnectionByNickname(nickname));
+  })
 });
 
 var port = process.env.PORT || 3000;

@@ -22,7 +22,7 @@
          <div class="background">
            <img src="images/office.jpg">
          </div>
-         <a href="#!user"><img class="circle" id="profile-avatar" src=""></a>
+         <a href="#!user"><img class="circle" id="avatar" src=""></a>
          <a href="#!name"><span class="white-text name" id="nickname-navbar"></span></a>
          <a href="#!email"><span class="white-text email"></span></a>
        </div></li>
@@ -38,11 +38,24 @@
       <div class="modal-content">
         <div class="row center-align">
           <div class="input-field col s4">
-            <input id="nickname" type="text" maxlength="30">
+            <input id="nickname" type="text" maxlength="22">
             <label for="nickname">Nickname</label>
           </div>
           <button class="waves-effect waves-light btn gap" id="join" onclick="attemptToJoin()">Join</button>
         </div>
+      </div>
+    </div>
+    <!-- Profile Modal -->
+    <div id="modal2" class="modal profile">
+      <div class="modal-content center-align">
+        <div class="userView">
+          <img class="circle" id="profile-avatar" src="">
+          <div class="black-text profile-nickname" id="profile-nickname"></div>
+          <div class="black-text profile-active"><div class="chip">Last Active: <span id="profile-activity"></span></div></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="$('#modal2').modal('close');">Close</a>
       </div>
     </div>
 

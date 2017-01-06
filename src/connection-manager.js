@@ -3,7 +3,8 @@ var connections = []
 function addConnection(name, socket){
   connections.push({
     nickname: name,
-    _id: socket.id
+    _id: socket.id,
+    lastActive: (new Date()).toLocaleTimeString()
   });
   console.log(connections.length);
 };
@@ -26,6 +27,14 @@ function getConnection(socket){
   }
 };
 
+function getConnectionByNickname(nickname){
+  for (var i = 0; i < connections.length; i++){
+    if (connections[i].nickname == nickname){
+      return connections[i];
+    }
+  }
+}
+
 function getConnections(){
   return connections;
 };
@@ -40,6 +49,7 @@ module.exports = {
   addConnection: addConnection,
   removeConnection: removeConnection,
   getConnection: getConnection,
+  getConnectionByNickname, getConnectionByNickname,
   getConnections: getConnections,
   setAvatar: setAvatar,
   connections: connections

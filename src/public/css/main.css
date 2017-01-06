@@ -14,3 +14,6 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 .side-nav .valign-wrapper:hover { background-color: rgba(0,0,0,0.05) !important; }
 .side-nav .valign-wrapper .user { background-color: transparent !important; }
 .sendButton { float: right; margin-top: 0.3%; margin-right: 0.3%; }
+.profile { width: 30% !important; }
+.profile-nickname { font-size: 2.5rem; }
+.profile-active { font-size: 1rem; }
