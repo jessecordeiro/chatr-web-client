@@ -17,7 +17,7 @@ Chatr is an MIT open-source project.
 
 ## <a name="features"></a>Features
 
-Chatr currently features: 
+Chatr currently features:
 
 - Group messaging
 
@@ -28,6 +28,8 @@ Chatr currently features:
 - Message timestamps
 
 - Users currently online info
+
+- Identicons - [**Recently added**](https://github.com/jessecordeiro/chatr-web-client/commit/1a803f520aa2d8395c0939e7665500ea0702e488)
 
 ## <a name="quick-start"></a>Quick Start
 
@@ -48,13 +50,13 @@ Follow the steps below to start an instance of Chatr within minutes
   ```bash
   npm install
   ```
-  
+
 3. **Start the Node.js HTTP server:**
 
   ```bash
   node app.js
   ```
-  
+
 ## <a name="planned-features"></a>Planned Features
 - Video messaging
 
@@ -63,8 +65,6 @@ Follow the steps below to start an instance of Chatr within minutes
 - Channels
 
 - GIF/emoji support :rocket:
-
-- Identicons
 
 - Last active timestamps
 
