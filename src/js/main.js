@@ -29,6 +29,7 @@ function openSocket(nickname){
     var avatar = $('<img class="circle avatar-chat tooltipped" src="'+ connectionObject.avatar +'" data-position="right" data-delay="50" data-tooltip="' + (new Date()).toLocaleTimeString() + '">').tooltip();
     var userInfo = $('<b></b>').text(connectionObject.nickname);
     var messageContent = $('<span></span>').text(': ' + connectionObject.msg).prepend(userInfo);
+    emojify.run(messageContent[0])
     var message = $('<li class="valign-wrapper"></li>').append(avatar).append(messageContent);
     $('#messages').append(message);
   });

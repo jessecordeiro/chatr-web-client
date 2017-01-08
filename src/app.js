@@ -3,10 +3,10 @@ var app = require('express')();
 var express = require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var connectionManager = require('./connection-manager.js');
+var connectionManager = require('./js/connection-manager.js');
 
 // Allow folders in /public to be accessible client-side
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../dist'));
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -31,7 +31,6 @@ io.on('connection', function(socket){
       }
     }else{
       socket.emit('login response', false, {"error": "Nickname already taken"});
-      console.log(connections.length);
     }
   });
 
@@ -46,7 +45,6 @@ io.on('connection', function(socket){
   });
 
   socket.on('disconnect', function(){
-    console.log('a user disconnected');
     var connection = connectionManager.getConnection(socket);
     if (connection){
       connectionManager.removeConnection(socket);
@@ -89,7 +87,6 @@ io.on('connection', function(socket){
   socket.on('typing', function(){
     var connection = connectionManager.getConnection(socket);
     connection['lastActive'] = (new Date()).toLocaleTimeString();
-    console.log(connection['lastActive']);
   });
 
   socket.on('view profile', function(nickname){

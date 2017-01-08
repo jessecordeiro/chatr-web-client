@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "Chatr is an application intended to provide teams with a simple and lightweight platform for messaging.",
   "dependencies": {
+    "emojify.js": "^1.1.0",
     "express": "^4.10.2",
     "identicon.js": "^2.0.0",
     "materialize-css": "^0.97.8",
     "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0"
   }
 }

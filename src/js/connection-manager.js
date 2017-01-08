@@ -6,12 +6,9 @@ function addConnection(name, socket){
     _id: socket.id,
     lastActive: (new Date()).toLocaleTimeString()
   });
-  console.log(connections.length);
 };
 
 function removeConnection(socket){
-  // connections.splice(getConnection(socket), 1);
-  // console.log(connections.length);
   for (var i = 0; i < connections.length; i++){
     if (connections[i]._id == socket.id){
       connections.splice(i, 1);
@@ -41,7 +38,6 @@ function getConnections(){
 
 function setAvatar(socket, src){
   var connection = getConnection(socket);
-  // console.log(connections.length);
   connection['avatar'] = src;
 }
 
