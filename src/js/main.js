@@ -26,11 +26,13 @@ function openSocket(nickname){
     socket.emit('update avatar', true);
   });
   socket.on('chat message', function(connectionObject){
-    var avatar = $('<img class="circle avatar-chat tooltipped" src="'+ connectionObject.avatar +'" data-position="right" data-delay="50" data-tooltip="' + (new Date()).toLocaleTimeString() + '">').tooltip();
-    var userInfo = $('<b></b>').text(connectionObject.nickname);
-    var messageContent = $('<span></span>').text(': ' + connectionObject.msg).prepend(userInfo);
-    emojify.run(messageContent[0])
-    var message = $('<li class="valign-wrapper"></li>').append(avatar).append(messageContent);
+    var avatar = $('<div class="chat-avatar" style="background-image: url(' + connectionObject.avatar + ')">');
+    var nickname = $('<div class="chat-nickname">' + connectionObject.nickname + '</div>');
+    var message = $('<div></div>').text(connectionObject.msg);
+    var messageContent = $('<div flex></div>').append(nickname).append(message);
+    var date = $('<div class="timestamp">' + (new Date()).toLocaleTimeString() + '</div>');
+    emojify.run(message[0]);
+    var message = $('<li class="valign-wrapper message-wrapper" layout horizontal></li>').append(avatar).append(messageContent).append(date);
     $('#messages').append(message);
   });
   socket.on('connected', function(info){

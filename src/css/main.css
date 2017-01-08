@@ -1,15 +1,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font: 13px Helvetica, Arial; }
-form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-form input { border: 0; padding: 10px; width: 95% !important; margin-right: .5%; margin-left: .5% !important; color: white !important;}
+body { font: 13px Helvetica, Arial; background-color: #f6f6f6; }
+form { background: #fff; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+form input { border: 0; padding: 10px; width: 95% !important; margin-right: .5%; margin-left: .5% !important; color: black !important;}
 form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; float: right; margin: 1%; }
-#messages { list-style-type: none; margin: 0; padding: 0; }
-#messages li { padding: 5px 10px; font-family: 'Roboto', sans-serif; }
-#messages li:nth-child(odd) { background: #eee; }
+#messages { list-style-type: none; margin: 0; padding: 0; padding-bottom: 16px; }
+#messages li { padding: 5px 10px; font-family: 'Roboto', sans-serif; border-bottom: 1px solid #e0e0e0; }
 .row .col.s4 { left: 30% !important; }
 .gap { margin-top: 1% !important; }
 .button-collapse { display: block !important; }
-.avatar-chat { height: 0.5%; width: 1%; margin-right: 0.5%;}
 .avatar-sidenav-list { margin-right: 10%; top: 5%; width: 10%; }
 .side-nav .valign-wrapper:hover { background-color: rgba(0,0,0,0.05) !important; }
 .side-nav .valign-wrapper .user { background-color: transparent !important; }
@@ -17,3 +15,11 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 .profile { width: 30% !important; }
 .profile-nickname { font-size: 2.5rem; }
 .profile-active { font-size: 1rem; }
+.chat-avatar { border-radius: 50%; width: 40px; height: 40px; margin: 0 16px 0 0; background-size: contain; position: relative; }
+.chat-nickname { text-transform: capitalize; font-weight: 500; color: #919191; line-height: 1.3em; max-width: 90%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+[flex] { -ms-flex: 1 1 0.000000001px; -webkit-flex: 1; flex: 1; -webkit-flex-basis: 0.000000001px; flex-basis: 0.000000001px; }
+.message-wrapper { padding: 16px; border-bottom: 1px solid #e0e0e0; }
+.timestamp { font-size: 0.75em; color: #919191; }
+#m:focus { border-bottom: 1px solid #ee6e73; box-shadow: 0 1px 0 0 #ee6e73; }
+#m:focus + label { color: #ee6e73; }
+.primaryColour { background-color: #ee6e73 !important; }
