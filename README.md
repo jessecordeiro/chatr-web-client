@@ -33,6 +33,8 @@ Chatr currently features:
 
 - User profiles + last active timestamps - [**Recently added**](https://github.com/jessecordeiro/chatr-web-client/commit/d359b824356c4cf048420ddc1adc5ee4bc66533b)
 
+- Emoji support :rocket: - [**Recently added**](https://github.com/jessecordeiro/chatr-web-client/commit/988aea938f86853b6a4b6614345db90c14a88cac)
+
 ## <a name="quick-start"></a>Quick Start
 
 Follow the steps below to start an instance of Chatr within minutes
@@ -53,7 +55,13 @@ Follow the steps below to start an instance of Chatr within minutes
   npm install
   ```
 
-3. **Start the Node.js HTTP server:**
+4. **Run automated build tasks:**
+
+  ```bash
+  grunt build
+  ```
+
+5. **Start the Node.js HTTP server:**
 
   ```bash
   node app.js
@@ -65,9 +73,6 @@ Follow the steps below to start an instance of Chatr within minutes
 - Private messaging
 
 - Channels
-
-- GIF/emoji support :rocket:
-
 
 ## <a name="contribute"></a>Contribute
 1. Fork the repository
