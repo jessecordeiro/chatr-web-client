@@ -20,6 +20,6 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 [flex] { -ms-flex: 1 1 0.000000001px; -webkit-flex: 1; flex: 1; -webkit-flex-basis: 0.000000001px; flex-basis: 0.000000001px; }
 .message-wrapper { padding: 16px; border-bottom: 1px solid #e0e0e0; }
 .timestamp { font-size: 0.75em; color: #919191; }
-#m:focus { border-bottom: 1px solid #ee6e73; box-shadow: 0 1px 0 0 #ee6e73; }
-#m:focus + label { color: #ee6e73; }
+input:focus { border-bottom: 1px solid #ee6e73 !important; box-shadow: 0 1px 0 0 #ee6e73 !important; }
+input:focus + label { color: #ee6e73 !important; }
 .primaryColour { background-color: #ee6e73 !important; }
