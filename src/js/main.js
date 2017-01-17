@@ -28,7 +28,7 @@ function openSocket(nickname){
   socket.on('chat message', function(connectionObject){
     var avatar = $('<div class="chat-avatar" style="background-image: url(' + connectionObject.avatar + ')">');
     var nickname = $('<div class="chat-nickname">' + connectionObject.nickname + '</div>');
-    var message = $('<div></div>').text(connectionObject.msg);
+    var message = $('<div class="message-content"></div>').text(connectionObject.msg);
     var messageContent = $('<div flex></div>').append(nickname).append(message);
     var date = $('<div class="timestamp">' + (new Date()).toLocaleTimeString() + '</div>');
     emojify.run(message[0]);

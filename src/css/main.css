@@ -126,6 +126,10 @@ form button {
 
 }
 
+.message-content {
+    word-break: break-word;
+}
+
 .timestamp {
     font-size: 0.75em;
     color: #919191;
