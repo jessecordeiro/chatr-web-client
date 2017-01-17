@@ -39,7 +39,7 @@ form button {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-bottom: 16px;
+    padding-bottom: 5.5rem;
 }
 
 #messages li {
@@ -123,6 +123,7 @@ form button {
 .message-wrapper {
     padding: 16px;
     border-bottom: 1px solid #e0e0e0;
+
 }
 
 .timestamp {
